@@ -16,7 +16,7 @@ export interface SetupCheckResponse {
 })
 export class AuthService {
 
-  private apiUrl = 'https://physio-website-7t48.onrender.com/api/auth';
+  private apiUrl = 'https://physio-website-7r48.onrender.com/api/auth';
   private tokenKey = 'physiocare_admin_token';
 
   constructor(private http: HttpClient) {}

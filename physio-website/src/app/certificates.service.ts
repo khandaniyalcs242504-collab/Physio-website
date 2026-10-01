@@ -14,8 +14,8 @@ export interface Certificate {
 })
 export class CertificatesService {
 
-  private apiUrl = 'https://physio-website-7t48.onrender.com/api/certificates';
-  private baseUrl = 'https://physio-website-7t48.onrender.com';
+  private apiUrl = 'https://physio-website-7r48.onrender.com/api/certificates';
+  private baseUrl = 'https://physio-website-7r48.onrender.com';
 
   constructor(private http: HttpClient) {}
 

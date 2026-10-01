@@ -18,7 +18,7 @@ export interface QualificationCard {
 })
 export class QualificationsService {
 
-  private apiUrl = 'https://physio-website-7t48.onrender.com/api/qualification-cards';
+  private apiUrl = 'https://physio-website-7r48.onrender.com/api/qualification-cards';
 
   constructor(private http: HttpClient) {}
 
