@@ -1,0 +1,355 @@
+<div class="admin-qualifications-page">
+
+  <header class="page-header">
+
+    <div>
+      <p class="small-title">ADMIN PANEL</p>
+
+      <h1>Manage Qualifications</h1>
+
+      <p class="subtitle">
+        Manage your professional qualifications, certifications and experience.
+      </p>
+    </div>
+
+    <a routerLink="/admin" class="back-btn">
+      Back to Dashboard
+    </a>
+
+  </header>
+
+
+  <section class="qualifications-section">
+
+    <div class="section-header">
+
+      <div>
+        <p class="label">PROFESSIONAL PROFILE</p>
+
+        <h2>Education & Qualifications</h2>
+      </div>
+
+      <span class="qualification-count">
+        {{ qualifications.length }} Qualifications
+      </span>
+
+    </div>
+
+
+    <div class="qualifications-grid">
+
+      <div class="qualification-card" *ngFor="let item of qualifications">
+
+        <div class="qualification-icon">
+          {{ item.icon }}
+        </div>
+
+        <div class="qualification-content">
+
+          <span class="qualification-type">
+            {{ item.type }}
+          </span>
+
+          <h3>
+            {{ item.title }}
+          </h3>
+
+          <p class="institution" *ngIf="item.institution">
+            {{ item.institution }}
+          </p>
+
+          <span class="year" *ngIf="item.year">
+            {{ item.year }}
+          </span>
+
+          <p class="description">
+            {{ item.description }}
+          </p>
+
+        </div>
+
+        <div class="card-actions">
+
+          <button class="edit-btn" (click)="editQualification(item)">
+            Edit
+          </button>
+
+          <button class="delete-btn" (click)="deleteQualification(item._id)">
+            Delete
+          </button>
+
+        </div>
+
+      </div>
+
+      <p *ngIf="qualifications.length === 0">
+        No qualifications added yet. Use the form below to add your first one.
+      </p>
+
+    </div>
+
+  </section>
+
+
+  <section class="add-qualification-section">
+
+    <div class="section-header">
+
+      <div>
+        <p class="label">{{ isEditing ? 'EDIT QUALIFICATION' : 'ADD NEW' }}</p>
+
+        <h2>{{ isEditing ? 'Edit Qualification' : 'Add New Qualification' }}</h2>
+      </div>
+
+    </div>
+
+
+    <form>
+
+      <div class="form-row">
+
+        <div class="form-group">
+
+          <label for="qualification">
+            Qualification
+          </label>
+
+          <input
+            id="qualification"
+            type="text"
+            placeholder="Example: Bachelor of Physiotherapy"
+            [(ngModel)]="newQualification.title"
+            name="title"
+          >
+
+        </div>
+
+        <div class="form-group">
+
+          <label for="type">
+            Type
+          </label>
+
+          <select
+            id="type"
+            [(ngModel)]="newQualification.type"
+            name="type">
+
+            <option value="">Select type</option>
+            <option value="education">Education</option>
+            <option value="certification">Certification</option>
+            <option value="experience">Experience</option>
+            <option value="specialization">Specialization</option>
+
+          </select>
+
+        </div>
+
+      </div>
+
+
+      <div class="form-row">
+
+        <div class="form-group">
+
+          <label for="institution">
+            Institution
+          </label>
+
+          <input
+            id="institution"
+            type="text"
+            placeholder="College / Institute / Organization"
+            [(ngModel)]="newQualification.institution"
+            name="institution"
+          >
+
+        </div>
+
+        <div class="form-group">
+
+          <label for="year">
+            Year
+          </label>
+
+          <input
+            id="year"
+            type="text"
+            placeholder="Example: 2024"
+            [(ngModel)]="newQualification.year"
+            name="year"
+          >
+
+        </div>
+
+      </div>
+
+
+      <div class="form-row">
+
+        <div class="form-group">
+
+          <label for="icon">
+            Icon (Emoji)
+          </label>
+
+          <input
+            id="icon"
+            type="text"
+            placeholder="Example icon character"
+            [(ngModel)]="newQualification.icon"
+            name="icon"
+          >
+
+        </div>
+
+        <div class="form-group">
+
+          <label for="order">
+            Display Order
+          </label>
+
+          <input
+            id="order"
+            type="number"
+            placeholder="Example: 1"
+            [(ngModel)]="newQualification.order"
+            name="order"
+          >
+
+        </div>
+
+      </div>
+
+
+      <div class="form-group">
+
+        <label for="description">
+          Description
+        </label>
+
+        <textarea
+          id="description"
+          rows="5"
+          placeholder="Enter details about this qualification..."
+          [(ngModel)]="newQualification.description"
+          name="description"
+        ></textarea>
+
+      </div>
+
+
+      <div class="form-actions">
+
+        <button type="button" class="clear-btn" (click)="clearForm()">
+          Clear
+        </button>
+
+        <button type="button" class="save-btn" (click)="addQualification()">
+          {{ isEditing ? 'Update Qualification' : 'Add Qualification' }}
+        </button>
+
+      </div>
+
+    </form>
+
+  </section>
+
+
+  <!-- CERTIFICATE IMAGES SECTION -->
+
+  <section class="qualifications-section" style="margin-top: 25px;">
+
+    <div class="section-header">
+
+      <div>
+        <p class="label">CERTIFICATES</p>
+        <h2>Certificate Images</h2>
+      </div>
+
+      <span class="qualification-count">
+        {{ certificates.length }} Certificates
+      </span>
+
+    </div>
+
+    <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(160px, 1fr)); gap: 18px; margin-bottom: 25px;">
+
+      <div
+        *ngFor="let cert of certificates"
+        style="border: 1px solid #e0ecea; border-radius: 12px; overflow: hidden; background: white;">
+
+        <img
+          [src]="certificatesService.getFullImageUrl(cert.imageUrl)"
+          [alt]="cert.title || 'Certificate'"
+          style="width: 100%; height: 140px; object-fit: cover; display: block;"
+        >
+
+        <div style="padding: 10px;">
+          <p style="margin: 0 0 8px; font-size: 13px; color: #143d3a; font-weight: 600;">{{ cert.title || 'Certificate' }}</p>
+          <button
+            type="button"
+            (click)="deleteCertificate(cert._id)"
+            style="width: 100%; border: 1px solid #ead4d4; background: white; color: #c45151; padding: 6px; border-radius: 15px; cursor: pointer; font-size: 12px; font-weight: 600;">
+            Delete
+          </button>
+        </div>
+
+      </div>
+
+      <p *ngIf="certificates.length === 0" style="grid-column: 1 / -1; text-align: center; color: #666;">
+        No certificates uploaded yet.
+      </p>
+
+    </div>
+
+    <form>
+
+      <p class="label">ADD CERTIFICATE</p>
+
+      <div class="form-group">
+
+        <label>Certificate Title (optional)</label>
+
+        <input
+          type="text"
+          placeholder="Example: Sports Rehabilitation Certification"
+          [(ngModel)]="newCertificateTitle"
+          name="certificateTitle"
+        >
+
+      </div>
+
+      <div class="form-group">
+
+        <label>Certificate Image</label>
+
+        <div style="border: 2px dashed #c9ddda; border-radius: 12px; padding: 25px; text-align: center; background: #fbfdfd;">
+
+          <div *ngIf="certPreviewUrl" style="margin-bottom: 15px;">
+            <img [src]="certPreviewUrl" style="max-width: 180px; max-height: 180px; border-radius: 10px; object-fit: cover;">
+          </div>
+
+          <p style="color: #666; margin: 0 0 12px; font-size: 14px;">
+            Choose an image to add to certificates
+          </p>
+
+          <input type="file" accept="image/*" (change)="onCertFileSelected($event)">
+
+        </div>
+
+      </div>
+
+      <div class="form-actions">
+
+        <button type="button" class="save-btn" (click)="addCertificate()">
+          Add Certificate
+        </button>
+
+      </div>
+
+    </form>
+
+  </section>
+
+</div>

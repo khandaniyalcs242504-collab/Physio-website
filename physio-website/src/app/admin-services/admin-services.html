@@ -1,0 +1,169 @@
+<div class="admin-services-page">
+
+  <!-- HEADER -->
+
+  <header class="page-header">
+
+    <div>
+
+      <p class="small-title">
+        ADMIN PANEL
+      </p>
+
+      <h1>
+        Manage Services
+      </h1>
+
+      <p class="subtitle">
+        Add, edit and manage the physiotherapy services displayed on your website.
+      </p>
+
+    </div>
+
+    <a routerLink="/admin" class="back-btn">
+      Back to Dashboard
+    </a>
+
+  </header>
+
+
+  <!-- SERVICES SECTION -->
+
+  <section class="services-section">
+
+    <div class="section-header">
+
+      <div>
+
+        <p class="label">
+          CURRENT SERVICES
+        </p>
+
+        <h2>
+          Physiotherapy Services
+        </h2>
+
+      </div>
+
+      <span class="service-count">
+        {{ services.length }} Services
+      </span>
+
+    </div>
+
+
+    <!-- SERVICE CARDS -->
+
+    <div class="services-grid">
+
+      <div class="service-card" *ngFor="let service of services">
+
+        <div class="service-content">
+
+          <h3>
+            {{ service.title }}
+          </h3>
+
+          <p>
+            {{ service.description }}
+          </p>
+
+        </div>
+
+        <div class="card-actions">
+
+          <button class="edit-btn" (click)="editService(service)">
+            Edit
+          </button>
+
+          <button class="delete-btn" (click)="deleteService(service._id)">
+            Delete
+          </button>
+
+        </div>
+
+      </div>
+
+      <p *ngIf="services.length === 0">
+        No services added yet. Use the form below to add your first service.
+      </p>
+
+    </div>
+
+  </section>
+
+
+  <!-- ADD / EDIT SERVICE -->
+
+  <section class="add-service-section">
+
+    <div class="section-header">
+
+      <div>
+
+        <p class="label">
+          {{ isEditing ? 'EDIT SERVICE' : 'ADD NEW' }}
+        </p>
+
+        <h2>
+          {{ isEditing ? 'Edit Service' : 'Add New Service' }}
+        </h2>
+
+      </div>
+
+    </div>
+
+
+    <form>
+
+      <div class="form-group">
+
+        <label for="serviceName">
+          Service Name
+        </label>
+
+        <input
+          id="serviceName"
+          type="text"
+          placeholder="Example: Manual Therapy"
+          [(ngModel)]="newService.title"
+          name="title"
+        >
+
+      </div>
+
+
+      <div class="form-group">
+
+        <label for="description">
+          Description
+        </label>
+
+        <textarea
+          id="description"
+          rows="5"
+          placeholder="Enter a short description of the service..."
+          [(ngModel)]="newService.description"
+          name="description"
+        ></textarea>
+
+      </div>
+
+
+      <div class="form-actions">
+
+        <button type="button" class="clear-btn" (click)="clearForm()">
+          Clear
+        </button>
+
+        <button type="button" class="save-btn" (click)="addService()">
+          {{ isEditing ? 'Update Service' : 'Add Service' }}
+        </button>
+
+      </div>
+
+    </form>
+
+  </section>
+
+</div>

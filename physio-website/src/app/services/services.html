@@ -1,0 +1,61 @@
+<nav>
+  <h2>Dr. Khadija Kardekar</h2>
+
+  <div class="links">
+    <a routerLink="/">Home</a>
+    <a routerLink="/about">About</a>
+    <a routerLink="/services">Services</a>
+    <a routerLink="/qualifications">Qualifications</a>
+    <a routerLink="/gallery">Gallery</a>
+    <a routerLink="/reviews">Reviews</a>
+    <a routerLink="/contact">Contact</a>
+  </div>
+</nav>
+
+<section class="services-hero">
+
+  <p class="label">OUR SERVICES</p>
+
+  <h1>Physiotherapy Care For Better Movement</h1>
+
+  <p>
+    Professional care focused on helping you recover,
+    move comfortably and improve your physical well-being.
+  </p>
+
+</section>
+
+<section class="services-section">
+
+  <div class="service-card" *ngFor="let service of services; let i = index">
+    <div class="icon">{{ i + 1 < 10 ? '0' + (i + 1) : (i + 1) }}</div>
+
+    <h2>{{ service.title }}</h2>
+
+    <p>
+      {{ service.description }}
+    </p>
+  </div>
+
+  <p *ngIf="services.length === 0" style="grid-column: 1 / -1; text-align: center; color: #666;">
+    Services will be listed here soon.
+  </p>
+
+</section>
+
+<section class="service-note">
+
+  <p class="label">PATIENT CARE</p>
+
+  <h2>Every Patient Is Different</h2>
+
+  <p>
+    Treatment and physiotherapy guidance can be tailored
+    according to the patient's individual needs and condition.
+  </p>
+
+</section>
+
+<div class="back-home">
+  <a routerLink="/" class="btn">Back to Home</a>
+</div>

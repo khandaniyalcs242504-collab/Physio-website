@@ -1,0 +1,153 @@
+* {
+  box-sizing: border-box;
+}
+
+.login-page {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #f5f9f8;
+  padding: 20px;
+}
+
+.login-card {
+  background: white;
+  border-radius: 18px;
+  padding: 40px;
+  width: 100%;
+  max-width: 420px;
+  border: 1px solid #e0ecea;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.05);
+}
+
+.login-card h2 {
+  text-align: center;
+  color: #078f87;
+  margin: 0 0 5px;
+}
+
+.subtitle {
+  text-align: center;
+  color: #666;
+  margin: 0 0 30px;
+  font-size: 14px;
+}
+
+.loading {
+  text-align: center;
+  color: #666;
+  padding: 20px;
+}
+
+.form-heading {
+  color: #143d3a;
+  font-size: 20px;
+  font-weight: bold;
+  margin: 0 0 8px;
+}
+
+.form-note {
+  color: #666;
+  font-size: 13px;
+  margin: 0 0 25px;
+  line-height: 1.5;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  display: block;
+  color: #143d3a;
+  font-weight: 600;
+  font-size: 14px;
+  margin-bottom: 8px;
+}
+
+.form-group input {
+  width: 100%;
+  padding: 12px 15px;
+  border: 1px solid #d8e6e4;
+  border-radius: 8px;
+  font-size: 15px;
+  outline: none;
+  transition: 0.2s;
+}
+
+.form-group input:focus {
+  border-color: #078f87;
+  box-shadow: 0 0 0 3px rgba(7, 143, 135, 0.08);
+}
+
+.password-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.password-wrapper input {
+  flex: 1;
+  padding-right: 60px;
+}
+
+.toggle-btn {
+  position: absolute;
+  right: 10px;
+  border: none;
+  background: none;
+  color: #078f87;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  padding: 5px;
+}
+
+.toggle-btn:hover {
+  text-decoration: underline;
+}
+
+.password-hint {
+  color: #888;
+  font-size: 12px;
+  margin: 8px 0 0;
+  line-height: 1.4;
+}
+
+.error-message {
+  color: #c45151;
+  font-size: 14px;
+  margin: -10px 0 15px;
+}
+
+.submit-btn {
+  width: 100%;
+  padding: 14px;
+  border: none;
+  border-radius: 25px;
+  background: #078f87;
+  color: white;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.submit-btn:hover {
+  background: #056f69;
+}
+
+.switch-link {
+  text-align: center;
+  margin-top: 20px;
+  font-size: 13px;
+  color: #666;
+}
+
+.switch-link a {
+  color: #078f87;
+  font-weight: 600;
+  cursor: pointer;
+  text-decoration: underline;
+}

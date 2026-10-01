@@ -1,0 +1,79 @@
+/* You can add global styles to this file, and also import other style files */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+}
+
+nav {
+  padding: 20px 7%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: white;
+}
+
+nav h2 {
+  color: #087f73;
+}
+
+.links {
+  display: flex;
+  gap: 20px;
+}
+
+.hero {
+  min-height: 500px;
+  padding: 70px 8%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #e8f5f2;
+}
+
+.text {
+  max-width: 600px;
+}
+
+.tag {
+  color: #087f73;
+  font-weight: bold;
+}
+
+h1 {
+  font-size: 60px;
+  line-height: 1.1;
+  color: #173b38;
+}
+
+h3 {
+  color: #087f73;
+}
+
+button {
+  padding: 12px 22px;
+  margin: 15px 8px 0 0;
+  border: 0;
+  border-radius: 25px;
+  background: #087f73;
+  color: white;
+}
+
+.photo {
+  width: 350px;
+  height: 420px;
+  border-radius: 180px 180px 20px 20px;
+  background: #c8e5df;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #087f73;
+}
+
+.intro {
+  padding: 70px 10%;
+  text-align: center;
+}

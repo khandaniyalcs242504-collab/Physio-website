@@ -1,0 +1,173 @@
+* {
+  box-sizing: border-box;
+}
+
+nav {
+  height: 85px;
+  padding: 0 8%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: white;
+}
+
+nav h2 {
+  color: #078f87;
+  margin: 0;
+}
+
+.links {
+  display: flex;
+  gap: 25px;
+}
+
+.links a {
+  color: #222;
+  text-decoration: none;
+  font-size: 16px;
+}
+
+.links a:hover {
+  color: #078f87;
+}
+
+.gallery-hero {
+  padding: 80px 15%;
+  background: #e8f6f4;
+  text-align: center;
+}
+
+.label {
+  color: #078f87;
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+
+.gallery-hero h1 {
+  color: #143d3a;
+  font-size: 48px;
+  margin: 20px 0;
+}
+
+.gallery-hero p:not(.label) {
+  max-width: 650px;
+  margin: auto;
+  color: #444;
+  line-height: 1.7;
+  font-size: 17px;
+}
+
+.gallery-section {
+  padding: 70px 8%;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 25px;
+}
+
+.gallery-card {
+  overflow: hidden;
+  border-radius: 15px;
+  background: white;
+  border: 1px solid #e1eeee;
+}
+
+.gallery-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+}
+
+.image-box {
+  height: 220px;
+  background: #c5e5e1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #078f87;
+  font-weight: bold;
+}
+
+.gallery-card h3 {
+  color: #143d3a;
+  margin: 20px 20px 8px;
+}
+
+.gallery-card p {
+  color: #555;
+  line-height: 1.5;
+  margin: 0 20px 20px;
+}
+
+.gallery-note {
+  padding: 70px 15%;
+  background: #f7fbfa;
+  text-align: center;
+}
+
+.gallery-note h2 {
+  color: #143d3a;
+  font-size: 32px;
+}
+
+.gallery-note p:not(.label) {
+  max-width: 600px;
+  margin: auto;
+  color: #555;
+  line-height: 1.7;
+}
+
+.back-home {
+  padding: 40px;
+  text-align: center;
+}
+
+.btn {
+  display: inline-block;
+  padding: 14px 25px;
+  border-radius: 30px;
+  background: #078f87;
+  color: white;
+  text-decoration: none;
+}
+
+.btn:hover {
+  background: #056f69;
+}
+
+@media (max-width: 900px) {
+
+  .gallery-section {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 650px) {
+
+  nav {
+    height: auto;
+    padding: 20px;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .links {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .gallery-hero {
+    padding: 60px 25px;
+  }
+
+  .gallery-hero h1 {
+    font-size: 38px;
+  }
+
+  .gallery-section {
+    grid-template-columns: 1fr;
+    padding: 50px 25px;
+  }
+
+  .gallery-note {
+    padding: 50px 25px;
+  }
+}

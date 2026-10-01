@@ -1,0 +1,169 @@
+<div class="admin-page">
+
+  <header class="page-header">
+
+    <div>
+      <p class="small-title">ADMIN PANEL</p>
+
+      <h1>Manage Contact</h1>
+
+      <p class="subtitle">
+        Update your contact information.
+      </p>
+    </div>
+
+    <a routerLink="/admin" class="back-btn">
+      Back to Dashboard
+    </a>
+
+  </header>
+
+
+  <section class="content-card">
+
+    <div class="section-title">
+
+      <p class="label">
+        CONTACT INFORMATION
+      </p>
+
+      <h2>
+        Dr. Khadija Kardekar
+      </h2>
+
+    </div>
+
+
+    <form>
+
+      <!-- PHONE NUMBERS -->
+
+      <div class="form-group">
+
+        <label>
+          Phone Numbers
+        </label>
+
+        <div
+          *ngFor="let phone of contact.phones; let i = index; trackBy: trackByIndex"
+          style="display: flex; gap: 10px; margin-bottom: 10px;">
+
+          <input
+            type="tel"
+            placeholder="+91 XXXXX XXXXX"
+            [value]="phone"
+            (input)="onPhoneChange(i, $any($event.target).value)"
+            [name]="'phone' + i"
+            style="flex: 1;"
+          >
+
+          <button
+            type="button"
+            class="clear-btn"
+            (click)="removePhoneField(i)">
+            Remove
+          </button>
+
+        </div>
+
+        <button
+          type="button"
+          (click)="addPhoneField()"
+          style="border: none; background: #e8f6f4; color: #078f87; padding: 9px 18px; border-radius: 20px; cursor: pointer; font-weight: 600;">
+          + Add Phone Number
+        </button>
+
+      </div>
+
+
+      <!-- EMAIL ADDRESSES -->
+
+      <div class="form-group">
+
+        <label>
+          Email Addresses
+        </label>
+
+        <div
+          *ngFor="let email of contact.emails; let i = index; trackBy: trackByIndex"
+          style="display: flex; gap: 10px; margin-bottom: 10px;">
+
+          <input
+            type="email"
+            placeholder="doctor@example.com"
+            [value]="email"
+            (input)="onEmailChange(i, $any($event.target).value)"
+            [name]="'email' + i"
+            style="flex: 1;"
+          >
+
+          <button
+            type="button"
+            class="clear-btn"
+            (click)="removeEmailField(i)">
+            Remove
+          </button>
+
+        </div>
+
+        <button
+          type="button"
+          (click)="addEmailField()"
+          style="border: none; background: #e8f6f4; color: #078f87; padding: 9px 18px; border-radius: 20px; cursor: pointer; font-weight: 600;">
+          + Add Email Address
+        </button>
+
+      </div>
+
+
+      <div class="form-actions">
+
+        <button
+          type="button"
+          class="clear-btn"
+          (click)="clearForm()">
+          Clear
+        </button>
+
+        <button
+          type="button"
+          class="save-btn"
+          (click)="saveContact()">
+          Save Contact Details
+        </button>
+
+      </div>
+
+    </form>
+
+  </section>
+
+
+  <section class="info-grid">
+
+    <div class="info-box">
+
+      <span>📞</span>
+
+      <div>
+        <h3>Phone</h3>
+        <p>Displayed on the Contact section.</p>
+      </div>
+
+    </div>
+
+
+    <div class="info-box">
+
+      <span>✉️</span>
+
+      <div>
+        <h3>Email</h3>
+        <p>Displayed for patient enquiries.</p>
+      </div>
+
+    </div>
+
+  </section>
+
+</div>

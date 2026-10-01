@@ -1,0 +1,32 @@
+import { Component, OnInit, ChangeDetectorRef } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { RouterLink } from '@angular/router';
+import { QualificationsService, QualificationCard } from '../qualifications.service';
+
+@Component({
+  selector: 'app-qualifications',
+  imports: [CommonModule, RouterLink],
+  templateUrl: './qualifications.html',
+  styleUrl: './qualifications.css'
+})
+export class Qualifications implements OnInit {
+
+  qualifications: QualificationCard[] = [];
+
+  constructor(
+    private qualificationsService: QualificationsService,
+    private cdr: ChangeDetectorRef
+  ) {}
+
+  ngOnInit() {
+    this.qualificationsService.getQualifications().subscribe({
+      next: (data) => {
+        this.qualifications = data;
+        this.cdr.detectChanges();
+      },
+      error: (err) => {
+        console.error('Error loading qualifications:', err);
+      }
+    });
+  }
+}

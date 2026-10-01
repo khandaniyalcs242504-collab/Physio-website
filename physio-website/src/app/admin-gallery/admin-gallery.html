@@ -1,0 +1,244 @@
+<div class="admin-gallery-page">
+
+  <!-- HEADER -->
+
+  <header class="page-header">
+
+    <div>
+      <p class="small-title">ADMIN PANEL</p>
+
+      <h1>Manage Gallery</h1>
+
+      <p class="subtitle">
+        Add, edit and manage the photos displayed on your website.
+      </p>
+    </div>
+
+    <a routerLink="/admin" class="back-btn">
+      Back to Dashboard
+    </a>
+
+  </header>
+
+
+  <!-- GALLERY -->
+
+  <section class="gallery-section">
+
+    <div class="section-header">
+
+      <div>
+        <p class="label">WEBSITE GALLERY</p>
+
+        <h2>Clinic & Professional Photos</h2>
+      </div>
+
+      <span class="photo-count">
+        {{ galleryItems.length }} Photos
+      </span>
+
+    </div>
+
+
+    <!-- PHOTO GRID -->
+
+    <div class="gallery-grid">
+
+      <div class="photo-card" *ngFor="let item of galleryItems">
+
+        <div class="photo-placeholder" style="padding: 0; overflow: hidden;">
+          <img
+            [src]="galleryService.getFullImageUrl(item.imageUrl)"
+            [alt]="item.title"
+            style="width: 100%; height: 100%; object-fit: cover;"
+          >
+        </div>
+
+        <div class="photo-info">
+
+          <span class="category">
+            {{ item.category }}
+          </span>
+
+          <h3>
+            {{ item.title }}
+          </h3>
+
+          <p>
+            {{ item.description }}
+          </p>
+
+          <div class="photo-actions">
+
+            <button class="preview-btn" (click)="previewPhoto(item)">
+              Preview
+            </button>
+
+            <button class="edit-btn" (click)="editPhoto(item)">
+              Edit
+            </button>
+
+            <button class="delete-btn" (click)="deletePhoto(item._id)">
+              Delete
+            </button>
+
+          </div>
+
+        </div>
+
+      </div>
+
+      <p *ngIf="galleryItems.length === 0">
+        No photos added yet. Use the form below to add your first photo.
+      </p>
+
+    </div>
+
+  </section>
+
+
+  <!-- ADD / EDIT PHOTO -->
+
+  <section class="add-photo-section">
+
+    <div class="section-header">
+
+      <div>
+        <p class="label">{{ isEditing ? 'EDIT PHOTO' : 'ADD NEW' }}</p>
+
+        <h2>{{ isEditing ? 'Edit Photo' : 'Add New Photo' }}</h2>
+      </div>
+
+    </div>
+
+
+    <form>
+
+      <div class="form-row">
+
+        <div class="form-group">
+
+          <label for="photoTitle">
+            Photo Title
+          </label>
+
+          <input
+            id="photoTitle"
+            type="text"
+            placeholder="Example: Clinic Interior"
+            [(ngModel)]="newItem.title"
+            name="title"
+          >
+
+        </div>
+
+        <div class="form-group">
+
+          <label for="category">
+            Category
+          </label>
+
+          <select
+            id="category"
+            [(ngModel)]="newItem.category"
+            name="category">
+
+            <option value="">Select category</option>
+            <option value="clinic">Clinic</option>
+            <option value="treatment">Treatment</option>
+            <option value="sports">Sports</option>
+            <option value="equipment">Equipment</option>
+            <option value="professional">Professional</option>
+
+          </select>
+
+        </div>
+
+      </div>
+
+
+      <div class="form-group">
+
+        <label for="description">
+          Description
+        </label>
+
+        <textarea
+          id="description"
+          rows="4"
+          placeholder="Enter a short description..."
+          [(ngModel)]="newItem.description"
+          name="description"
+        ></textarea>
+
+      </div>
+
+
+      <div class="form-group">
+
+        <label for="order">
+          Display Order
+        </label>
+
+        <input
+          id="order"
+          type="number"
+          placeholder="Example: 1"
+          [(ngModel)]="newItem.order"
+          name="order"
+        >
+
+      </div>
+
+
+      <div class="form-group">
+
+        <label>
+          Select Photo
+        </label>
+
+        <div class="upload-box">
+
+          <div class="upload-icon">
+            📁
+          </div>
+
+          <p>
+            Choose an image to add to the gallery
+          </p>
+
+          <input
+            type="file"
+            accept="image/*"
+            (change)="onFileSelected($event)"
+          >
+
+          <div *ngIf="previewUrl" style="margin-top: 15px;">
+            <img
+              [src]="previewUrl"
+              style="max-width: 200px; max-height: 150px; border-radius: 8px; object-fit: cover;"
+            >
+          </div>
+
+        </div>
+
+      </div>
+
+
+      <div class="form-actions">
+
+        <button type="button" class="clear-btn" (click)="clearForm()">
+          Clear
+        </button>
+
+        <button type="button" class="save-btn" (click)="addPhoto()">
+          {{ isEditing ? 'Update Photo' : 'Add Photo' }}
+        </button>
+
+      </div>
+
+    </form>
+
+  </section>
+
+</div>

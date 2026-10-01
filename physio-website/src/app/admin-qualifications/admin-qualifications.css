@@ -1,0 +1,359 @@
+* {
+  box-sizing: border-box;
+}
+
+.admin-qualifications-page {
+  min-height: 100vh;
+  background: #f5f9f8;
+  padding: 40px 50px;
+}
+
+
+/* =========================
+   HEADER
+========================= */
+
+.page-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 35px;
+}
+
+.small-title {
+  margin: 0;
+  color: #078f87;
+  font-size: 12px;
+  font-weight: bold;
+  letter-spacing: 2px;
+}
+
+.page-header h1 {
+  margin: 8px 0;
+  color: #143d3a;
+  font-size: 32px;
+}
+
+.subtitle {
+  margin: 0;
+  color: #666;
+}
+
+.back-btn {
+  text-decoration: none;
+  color: #078f87;
+  border: 1px solid #078f87;
+  padding: 11px 20px;
+  border-radius: 25px;
+  font-size: 14px;
+  transition: 0.2s;
+}
+
+.back-btn:hover {
+  background: #078f87;
+  color: white;
+}
+
+
+/* =========================
+   SECTIONS
+========================= */
+
+.qualifications-section,
+.add-qualification-section {
+  background: white;
+  border: 1px solid #e0ecea;
+  border-radius: 18px;
+  padding: 30px;
+  margin-bottom: 30px;
+}
+
+.section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 25px;
+}
+
+.label {
+  color: #078f87;
+  font-size: 11px;
+  font-weight: bold;
+  letter-spacing: 1.5px;
+  margin: 0 0 8px;
+}
+
+.section-header h2 {
+  color: #143d3a;
+  margin: 0;
+  font-size: 24px;
+}
+
+.qualification-count {
+  background: #e8f6f4;
+  color: #078f87;
+  padding: 8px 15px;
+  border-radius: 20px;
+  font-size: 13px;
+  font-weight: bold;
+}
+
+
+/* =========================
+   GRID
+========================= */
+
+.qualifications-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+
+
+/* =========================
+   CARDS
+========================= */
+
+.qualification-card {
+  border: 1px solid #e0ecea;
+  border-radius: 14px;
+  padding: 22px;
+  transition: 0.2s;
+}
+
+.qualification-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 22px rgba(0, 0, 0, 0.06);
+}
+
+.qualification-icon {
+  width: 55px;
+  height: 55px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #e8f6f4;
+  border-radius: 12px;
+  font-size: 27px;
+  margin-bottom: 15px;
+}
+
+.qualification-type {
+  color: #078f87;
+  font-size: 10px;
+  font-weight: bold;
+  letter-spacing: 1.5px;
+}
+
+.qualification-content h3 {
+  color: #143d3a;
+  margin: 8px 0;
+  font-size: 18px;
+}
+
+.institution {
+  color: #555;
+  margin: 0 0 10px;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.year {
+  display: inline-block;
+  color: #078f87;
+  background: #f0f8f7;
+  padding: 6px 11px;
+  border-radius: 15px;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.description {
+  color: #666;
+  line-height: 1.5;
+  font-size: 14px;
+  min-height: 63px;
+  margin: 15px 0 0;
+}
+
+
+/* =========================
+   ACTIONS
+========================= */
+
+.card-actions {
+  display: flex;
+  gap: 10px;
+  margin-top: 20px;
+  padding-top: 15px;
+  border-top: 1px solid #edf2f1;
+}
+
+.edit-btn,
+.delete-btn {
+  padding: 9px 17px;
+  border-radius: 20px;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 13px;
+}
+
+.edit-btn {
+  border: none;
+  background: #e8f6f4;
+  color: #078f87;
+}
+
+.edit-btn:hover {
+  background: #078f87;
+  color: white;
+}
+
+.delete-btn {
+  border: 1px solid #ead4d4;
+  background: white;
+  color: #c45151;
+}
+
+.delete-btn:hover {
+  background: #c45151;
+  color: white;
+}
+
+
+/* =========================
+   FORM
+========================= */
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 25px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 23px;
+}
+
+.form-group label {
+  color: #143d3a;
+  font-weight: 600;
+  font-size: 14px;
+  margin-bottom: 8px;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+  width: 100%;
+  padding: 13px 15px;
+  border: 1px solid #d8e6e4;
+  border-radius: 8px;
+  font-family: inherit;
+  font-size: 15px;
+  color: #333;
+  outline: none;
+  transition: 0.2s;
+  background: white;
+}
+
+.form-group textarea {
+  resize: vertical;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+  border-color: #078f87;
+  box-shadow: 0 0 0 3px rgba(7, 143, 135, 0.08);
+}
+
+
+/* =========================
+   FORM ACTIONS
+========================= */
+
+.form-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 15px;
+  padding-top: 20px;
+  border-top: 1px solid #e8eeee;
+}
+
+.clear-btn {
+  padding: 12px 25px;
+  border-radius: 25px;
+  border: 1px solid #d5dfdd;
+  background: white;
+  color: #555;
+  cursor: pointer;
+}
+
+.clear-btn:hover {
+  background: #f1f5f4;
+}
+
+.save-btn {
+  padding: 12px 28px;
+  border: none;
+  border-radius: 25px;
+  background: #078f87;
+  color: white;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.save-btn:hover {
+  background: #056f69;
+}
+
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 850px) {
+
+  .admin-qualifications-page {
+    padding: 30px 25px;
+  }
+
+  .qualifications-grid {
+    grid-template-columns: 1fr;
+  }
+
+}
+
+@media (max-width: 650px) {
+
+  .admin-qualifications-page {
+    padding: 25px 18px;
+  }
+
+  .page-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
+  }
+
+  .section-header {
+    align-items: flex-start;
+    gap: 15px;
+    flex-direction: column;
+  }
+
+  .form-row {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+
+  .qualifications-section,
+  .add-qualification-section {
+    padding: 22px 18px;
+  }
+
+}

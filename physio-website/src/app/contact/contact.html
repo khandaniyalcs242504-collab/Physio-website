@@ -1,0 +1,96 @@
+<nav>
+  <h2>Dr. Khadija Kardekar</h2>
+
+  <div class="links">
+    <a routerLink="/">Home</a>
+    <a routerLink="/about">About</a>
+    <a routerLink="/services">Services</a>
+    <a routerLink="/qualifications">Qualifications</a>
+    <a routerLink="/gallery">Gallery</a>
+    <a routerLink="/reviews">Reviews</a>
+    <a routerLink="/contact">Contact</a>
+  </div>
+</nav>
+
+<section class="contact-hero">
+
+  <p class="label">GET IN TOUCH</p>
+
+  <h1>Let's Talk About Your Recovery</h1>
+
+  <p>
+    Have a question or want to know more about our
+    physiotherapy services? Get in touch with us.
+  </p>
+
+</section>
+
+<section class="contact-section">
+
+  <div class="contact-info">
+
+    <p class="label">CONTACT INFORMATION</p>
+
+    <h2>{{ doctorName }}</h2>
+
+    <div class="info" *ngFor="let phone of contact.phones">
+      <h3>Phone</h3>
+      <p>{{ phone }}</p>
+    </div>
+
+    <div class="info" *ngFor="let email of contact.emails">
+      <h3>Email</h3>
+      <p>{{ email }}</p>
+    </div>
+
+  </div>
+
+  <div class="contact-form">
+
+    <h2>Send a Message</h2>
+
+    <form>
+
+      <input
+        type="text"
+        name="name"
+        placeholder="Your Name"
+        required
+      >
+
+      <input
+        type="email"
+        name="email"
+        placeholder="Your Email"
+        required
+      >
+
+      <input
+        type="text"
+        name="subject"
+        placeholder="Subject"
+        required
+      >
+
+      <textarea
+        name="message"
+        rows="5"
+        placeholder="Your Message"
+        required>
+      </textarea>
+
+      <button
+        type="button"
+        (click)="sendMessage()">
+        Send Message
+      </button>
+
+    </form>
+
+  </div>
+
+</section>
+
+<div class="back-home">
+  <a routerLink="/" class="btn">Back to Home</a>
+</div>

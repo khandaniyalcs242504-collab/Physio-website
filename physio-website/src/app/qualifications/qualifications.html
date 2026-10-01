@@ -1,0 +1,89 @@
+<nav>
+  <h2>Dr. Khadija Kardekar</h2>
+
+  <div class="links">
+    <a routerLink="/">Home</a>
+    <a routerLink="/about">About</a>
+    <a routerLink="/services">Services</a>
+    <a routerLink="/qualifications">Qualifications</a>
+    <a routerLink="/gallery">Gallery</a>
+    <a routerLink="/reviews">Reviews</a>
+    <a routerLink="/contact">Contact</a>
+  </div>
+</nav>
+
+<section class="qualification-hero">
+
+  <p class="label">PROFESSIONAL PROFILE</p>
+
+  <h1>Qualifications & Experience</h1>
+
+  <p>
+    Learn more about Dr. Khadija Kardekar's professional
+    education, certifications and experience.
+  </p>
+
+</section>
+
+<section class="qualification-section">
+
+  <div class="qualification-card" *ngFor="let item of qualifications; let i = index">
+
+    <div class="number">{{ i + 1 < 10 ? '0' + (i + 1) : (i + 1) }}</div>
+
+    <h2>{{ item.title }}</h2>
+
+    <p>
+      {{ item.description }}
+    </p>
+
+    <span *ngIf="item.year">{{ item.year }}</span>
+    <span *ngIf="item.institution"> - {{ item.institution }}</span>
+
+  </div>
+
+  <p *ngIf="qualifications.length === 0" style="grid-column: 1 / -1; text-align: center; color: #666;">
+    Qualifications will be listed here soon.
+  </p>
+
+</section>
+
+<section class="certificate-section">
+
+  <p class="label">CERTIFICATES</p>
+
+  <h2>Professional Certifications</h2>
+
+  <p>
+    Certificates and professional recognitions earned by the doctor.
+  </p>
+
+  <div
+    *ngIf="certificates.length > 0"
+    style="display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 20px; max-width: 900px; margin: 30px auto 0;">
+
+    <div *ngFor="let cert of certificates" style="border-radius: 12px; overflow: hidden; border: 1px solid #e1eeee;">
+
+      <img
+        [src]="certificatesService.getFullImageUrl(cert.imageUrl)"
+        [alt]="cert.title || 'Certificate'"
+        style="width: 100%; height: 220px; object-fit: cover; display: block;"
+      >
+
+      <p *ngIf="cert.title" style="margin: 0; padding: 10px; background: white; font-size: 14px; color: #143d3a; text-align: center;">
+        {{ cert.title }}
+      </p>
+
+    </div>
+
+  </div>
+
+  <div class="certificate-box" *ngIf="certificates.length === 0">
+    Certificate Images
+  </div>
+
+</section>
+
+<div class="back-home">
+  <a routerLink="/" class="btn">Back to Home</a>
+</div>

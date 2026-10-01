@@ -1,0 +1,226 @@
+* {
+  box-sizing: border-box;
+}
+
+.admin-about-page {
+  min-height: 100vh;
+  background: #f5f9f8;
+  padding: 40px 50px;
+}
+
+
+/* =========================
+   HEADER
+========================= */
+
+.page-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 35px;
+}
+
+.small-title {
+  margin: 0;
+  color: #078f87;
+  font-size: 12px;
+  font-weight: bold;
+  letter-spacing: 2px;
+}
+
+.page-header h1 {
+  margin: 8px 0;
+  color: #143d3a;
+  font-size: 32px;
+}
+
+.subtitle {
+  margin: 0;
+  color: #666;
+}
+
+
+/* =========================
+   BACK BUTTON
+========================= */
+
+.back-btn {
+  text-decoration: none;
+  color: #078f87;
+  border: 1px solid #078f87;
+  padding: 11px 20px;
+  border-radius: 25px;
+  font-size: 14px;
+  transition: 0.2s;
+}
+
+.back-btn:hover {
+  background: #078f87;
+  color: white;
+}
+
+
+/* =========================
+   EDITOR CARD
+========================= */
+
+.editor-card {
+  max-width: 900px;
+  background: white;
+  border-radius: 18px;
+  padding: 35px;
+  border: 1px solid #e0ecea;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.04);
+}
+
+
+/* =========================
+   CARD HEADER
+========================= */
+
+.card-heading {
+  border-bottom: 1px solid #e8eeee;
+  padding-bottom: 20px;
+  margin-bottom: 30px;
+}
+
+.label {
+  color: #078f87;
+  font-size: 11px;
+  font-weight: bold;
+  letter-spacing: 1.5px;
+  margin: 0 0 8px;
+}
+
+.card-heading h2 {
+  margin: 0;
+  color: #143d3a;
+}
+
+
+/* =========================
+   FORM
+========================= */
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 25px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 23px;
+}
+
+.form-group label {
+  color: #143d3a;
+  font-weight: 600;
+  font-size: 14px;
+  margin-bottom: 8px;
+}
+
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  padding: 13px 15px;
+  border: 1px solid #d8e6e4;
+  border-radius: 8px;
+  font-family: inherit;
+  font-size: 15px;
+  color: #333;
+  outline: none;
+  transition: 0.2s;
+}
+
+.form-group textarea {
+  resize: vertical;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  border-color: #078f87;
+  box-shadow: 0 0 0 3px rgba(7, 143, 135, 0.08);
+}
+
+
+/* =========================
+   FORM BUTTONS
+========================= */
+
+.form-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 15px;
+  margin-top: 10px;
+  padding-top: 25px;
+  border-top: 1px solid #e8eeee;
+}
+
+.cancel-btn {
+  padding: 12px 25px;
+  border-radius: 25px;
+  text-decoration: none;
+  color: #555;
+  border: 1px solid #d5dfdd;
+  transition: 0.2s;
+}
+
+.cancel-btn:hover {
+  background: #f1f5f4;
+}
+
+.save-btn {
+  padding: 12px 28px;
+  border: none;
+  border-radius: 25px;
+  background: #078f87;
+  color: white;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.save-btn:hover {
+  background: #056f69;
+}
+
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 700px) {
+
+  .admin-about-page {
+    padding: 25px 20px;
+  }
+
+  .page-header {
+    align-items: flex-start;
+    gap: 20px;
+    flex-direction: column;
+  }
+
+  .form-row {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+
+  .editor-card {
+    padding: 25px 20px;
+  }
+
+  .form-actions {
+    flex-direction: column;
+  }
+
+  .cancel-btn,
+  .save-btn {
+    text-align: center;
+    width: 100%;
+  }
+
+}

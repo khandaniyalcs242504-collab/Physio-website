@@ -1,0 +1,409 @@
+* {
+  box-sizing: border-box;
+}
+
+.admin-gallery-page {
+  min-height: 100vh;
+  background: #f5f9f8;
+  padding: 40px 50px;
+}
+
+
+/* =========================
+   HEADER
+========================= */
+
+.page-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 35px;
+}
+
+.small-title {
+  margin: 0;
+  color: #078f87;
+  font-size: 12px;
+  font-weight: bold;
+  letter-spacing: 2px;
+}
+
+.page-header h1 {
+  margin: 8px 0;
+  color: #143d3a;
+  font-size: 32px;
+}
+
+.subtitle {
+  margin: 0;
+  color: #666;
+}
+
+.back-btn {
+  text-decoration: none;
+  color: #078f87;
+  border: 1px solid #078f87;
+  padding: 11px 20px;
+  border-radius: 25px;
+  font-size: 14px;
+  transition: 0.2s;
+}
+
+.back-btn:hover {
+  background: #078f87;
+  color: white;
+}
+
+
+/* =========================
+   SECTION
+========================= */
+
+.gallery-section,
+.add-photo-section {
+  background: white;
+  border: 1px solid #e0ecea;
+  border-radius: 18px;
+  padding: 30px;
+  margin-bottom: 30px;
+}
+
+.section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 25px;
+}
+
+.label {
+  color: #078f87;
+  font-size: 11px;
+  font-weight: bold;
+  letter-spacing: 1.5px;
+  margin: 0 0 8px;
+}
+
+.section-header h2 {
+  color: #143d3a;
+  margin: 0;
+  font-size: 24px;
+}
+
+.photo-count {
+  background: #e8f6f4;
+  color: #078f87;
+  padding: 8px 15px;
+  border-radius: 20px;
+  font-size: 13px;
+  font-weight: bold;
+}
+
+
+/* =========================
+   GALLERY GRID
+========================= */
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+
+/* =========================
+   PHOTO CARD
+========================= */
+
+.photo-card {
+  border: 1px solid #e0ecea;
+  border-radius: 14px;
+  overflow: hidden;
+  background: white;
+  transition: 0.2s;
+}
+
+.photo-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 22px rgba(0, 0, 0, 0.07);
+}
+
+
+/* =========================
+   PHOTO PLACEHOLDER
+========================= */
+
+.photo-placeholder {
+  height: 190px;
+  background: linear-gradient(
+    135deg,
+    #e8f6f4,
+    #d8efec
+  );
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-size: 65px;
+}
+
+
+/* =========================
+   PHOTO INFO
+========================= */
+
+.photo-info {
+  padding: 20px;
+}
+
+.category {
+  color: #078f87;
+  font-size: 10px;
+  font-weight: bold;
+  letter-spacing: 1.5px;
+}
+
+.photo-info h3 {
+  color: #143d3a;
+  font-size: 18px;
+  margin: 8px 0;
+}
+
+.photo-info p {
+  color: #666;
+  font-size: 14px;
+  line-height: 1.5;
+  min-height: 42px;
+  margin: 0;
+}
+
+
+/* =========================
+   PHOTO ACTIONS
+========================= */
+
+.photo-actions {
+  display: flex;
+  gap: 7px;
+  margin-top: 18px;
+  padding-top: 15px;
+  border-top: 1px solid #edf2f1;
+}
+
+.photo-actions button {
+  padding: 8px 11px;
+  border-radius: 18px;
+  font-size: 11px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.preview-btn {
+  border: 1px solid #d7e6e4;
+  background: white;
+  color: #555;
+}
+
+.preview-btn:hover {
+  background: #f1f6f5;
+}
+
+.edit-btn {
+  border: none;
+  background: #e8f6f4;
+  color: #078f87;
+}
+
+.edit-btn:hover {
+  background: #078f87;
+  color: white;
+}
+
+.delete-btn {
+  border: 1px solid #ead4d4;
+  background: white;
+  color: #c45151;
+}
+
+.delete-btn:hover {
+  background: #c45151;
+  color: white;
+}
+
+
+/* =========================
+   FORM
+========================= */
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 25px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 23px;
+}
+
+.form-group label {
+  color: #143d3a;
+  font-weight: 600;
+  font-size: 14px;
+  margin-bottom: 8px;
+}
+
+.form-group input[type="text"],
+.form-group select,
+.form-group textarea {
+  width: 100%;
+  padding: 13px 15px;
+  border: 1px solid #d8e6e4;
+  border-radius: 8px;
+  font-family: inherit;
+  font-size: 15px;
+  color: #333;
+  outline: none;
+  transition: 0.2s;
+  background: white;
+}
+
+.form-group textarea {
+  resize: vertical;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+  border-color: #078f87;
+  box-shadow: 0 0 0 3px rgba(7, 143, 135, 0.08);
+}
+
+
+/* =========================
+   UPLOAD BOX
+========================= */
+
+.upload-box {
+  border: 2px dashed #c9ddda;
+  border-radius: 12px;
+  padding: 30px;
+  text-align: center;
+  background: #fbfdfd;
+}
+
+.upload-icon {
+  font-size: 35px;
+  margin-bottom: 10px;
+}
+
+.upload-box p {
+  color: #666;
+  margin: 0 0 15px;
+  font-size: 14px;
+}
+
+.upload-box input[type="file"] {
+  font-size: 13px;
+}
+
+
+/* =========================
+   FORM ACTIONS
+========================= */
+
+.form-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 15px;
+  padding-top: 20px;
+  border-top: 1px solid #e8eeee;
+}
+
+.clear-btn {
+  padding: 12px 25px;
+  border-radius: 25px;
+  border: 1px solid #d5dfdd;
+  background: white;
+  color: #555;
+  cursor: pointer;
+}
+
+.clear-btn:hover {
+  background: #f1f5f4;
+}
+
+.save-btn {
+  padding: 12px 28px;
+  border: none;
+  border-radius: 25px;
+  background: #078f87;
+  color: white;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.save-btn:hover {
+  background: #056f69;
+}
+
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 1050px) {
+
+  .gallery-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+}
+
+@media (max-width: 850px) {
+
+  .admin-gallery-page {
+    padding: 30px 25px;
+  }
+
+}
+
+@media (max-width: 650px) {
+
+  .admin-gallery-page {
+    padding: 25px 18px;
+  }
+
+  .page-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
+  }
+
+  .section-header {
+    align-items: flex-start;
+    gap: 15px;
+    flex-direction: column;
+  }
+
+  .gallery-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .form-row {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+
+  .gallery-section,
+  .add-photo-section {
+    padding: 22px 18px;
+  }
+
+  .photo-actions {
+    flex-wrap: wrap;
+  }
+
+}

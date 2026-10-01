@@ -1,0 +1,117 @@
+<div class="login-page">
+
+  <div class="login-card">
+
+    <h2>PhysioCare</h2>
+    <p class="subtitle">Admin Panel</p>
+
+    <div *ngIf="isLoading" class="loading">
+      Loading...
+    </div>
+
+    <!-- SETUP FORM -->
+
+    <form *ngIf="!isLoading && showSetupForm" (ngSubmit)="onSetupSubmit()">
+
+      <p class="form-heading">Create Admin Account</p>
+      <p class="form-note">Set up your Gmail address and a password to manage the website.</p>
+
+      <div class="form-group">
+        <label>Gmail Address</label>
+        <input
+          type="email"
+          [(ngModel)]="username"
+          name="username"
+          placeholder="youraddress@gmail.com"
+        >
+      </div>
+
+      <div class="form-group">
+        <label>Password</label>
+        <div class="password-wrapper">
+          <input
+            [type]="showPassword ? 'text' : 'password'"
+            [(ngModel)]="password"
+            name="password"
+            placeholder="Create a strong password"
+          >
+          <button type="button" class="toggle-btn" (click)="togglePasswordVisibility()">
+            {{ showPassword ? 'Hide' : 'Show' }}
+          </button>
+        </div>
+        <p class="password-hint">
+          At least 8 characters, with uppercase, lowercase, a number and a special character.
+        </p>
+      </div>
+
+      <div class="form-group">
+        <label>Confirm Password</label>
+        <div class="password-wrapper">
+          <input
+            [type]="showConfirmPassword ? 'text' : 'password'"
+            [(ngModel)]="confirmPassword"
+            name="confirmPassword"
+            placeholder="Re-enter password"
+          >
+          <button type="button" class="toggle-btn" (click)="toggleConfirmPasswordVisibility()">
+            {{ showConfirmPassword ? 'Hide' : 'Show' }}
+          </button>
+        </div>
+      </div>
+
+      <p *ngIf="errorMessage" class="error-message">{{ errorMessage }}</p>
+
+      <button type="submit" class="submit-btn">Create Account</button>
+
+      <p class="switch-link">
+        Already have an account?
+        <a (click)="switchToLogin()">Login here</a>
+      </p>
+
+    </form>
+
+    <!-- LOGIN FORM -->
+
+    <form *ngIf="!isLoading && !showSetupForm" (ngSubmit)="onLoginSubmit()">
+
+      <p class="form-heading">Login</p>
+
+      <div class="form-group">
+        <label>Gmail Address</label>
+        <input
+          type="email"
+          [(ngModel)]="username"
+          name="username"
+          placeholder="youraddress@gmail.com"
+        >
+      </div>
+
+      <div class="form-group">
+        <label>Password</label>
+        <div class="password-wrapper">
+          <input
+            [type]="showPassword ? 'text' : 'password'"
+            [(ngModel)]="password"
+            name="password"
+            placeholder="Enter your password"
+          >
+          <button type="button" class="toggle-btn" (click)="togglePasswordVisibility()">
+            {{ showPassword ? 'Hide' : 'Show' }}
+          </button>
+        </div>
+      </div>
+
+      <p *ngIf="errorMessage" class="error-message">{{ errorMessage }}</p>
+
+      <button type="submit" class="submit-btn">Login</button>
+
+      <p class="switch-link" *ngIf="setupNeeded">
+        Need to create the second admin account?
+        <a (click)="switchToSetup()">Create one here</a>
+      </p>
+
+    </form>
+
+  </div>
+
+</div>

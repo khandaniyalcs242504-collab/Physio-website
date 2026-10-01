@@ -1,0 +1,112 @@
+<nav>
+  <h2>Dr. Khadija Kardekar</h2>
+
+  <div class="links">
+    <a routerLink="/">Home</a>
+    <a routerLink="/about">About</a>
+    <a routerLink="/services">Services</a>
+    <a routerLink="/qualifications">Qualifications</a>
+    <a routerLink="/gallery">Gallery</a>
+    <a routerLink="/reviews">Reviews</a>
+    <a routerLink="/contact">Contact</a>
+  </div>
+</nav>
+
+<section class="reviews-hero">
+
+  <p class="label">PATIENT REVIEWS</p>
+
+  <h1>What Our Patients Say</h1>
+
+  <p>
+    Patient experiences and feedback about their
+    physiotherapy journey.
+  </p>
+
+</section>
+
+<section class="reviews-section">
+
+  <div class="review-card" *ngFor="let review of reviews">
+    <div class="stars">{{ getStars(review.rating) }}</div>
+
+    <p>
+      {{ review.reviewText }}
+    </p>
+
+    <h3>{{ review.name }}</h3>
+    <span>Patient</span>
+  </div>
+
+  <p *ngIf="reviews.length === 0" style="grid-column: 1 / -1; text-align: center; color: #666;">
+    Patient reviews will be shown here soon.
+  </p>
+
+</section>
+
+<!-- SUBMIT A REVIEW -->
+
+<section class="review-note" style="text-align: left;">
+
+  <p class="label" style="text-align: center;">SHARE YOUR EXPERIENCE</p>
+
+  <h2 style="text-align: center;">Leave a Review</h2>
+
+  <div style="max-width: 550px; margin: 30px auto 0; background: white; padding: 30px; border-radius: 15px; border: 1px solid #e0ecea;">
+
+    <div style="margin-bottom: 18px;">
+      <label style="display: block; font-weight: 600; color: #143d3a; margin-bottom: 8px;">Your Name</label>
+      <input
+        type="text"
+        [(ngModel)]="newReview.name"
+        name="reviewerName"
+        placeholder="Enter your name"
+        style="width: 100%; padding: 12px 15px; border: 1px solid #d8e6e4; border-radius: 8px; font-size: 15px; outline: none;"
+      >
+    </div>
+
+    <div style="margin-bottom: 18px;">
+      <label style="display: block; font-weight: 600; color: #143d3a; margin-bottom: 8px;">Rating</label>
+      <select
+        [(ngModel)]="newReview.rating"
+        name="reviewerRating"
+        style="width: 100%; padding: 12px 15px; border: 1px solid #d8e6e4; border-radius: 8px; font-size: 15px; outline: none; background: white;"
+      >
+        <option [value]="5">5 Stars - Excellent</option>
+        <option [value]="4">4 Stars - Very Good</option>
+        <option [value]="3">3 Stars - Good</option>
+        <option [value]="2">2 Stars - Fair</option>
+        <option [value]="1">1 Star - Poor</option>
+      </select>
+    </div>
+
+    <div style="margin-bottom: 20px;">
+      <label style="display: block; font-weight: 600; color: #143d3a; margin-bottom: 8px;">Your Review</label>
+      <textarea
+        [(ngModel)]="newReview.reviewText"
+        name="reviewerText"
+        rows="4"
+        placeholder="Share your experience with Dr. Khadija..."
+        style="width: 100%; padding: 12px 15px; border: 1px solid #d8e6e4; border-radius: 8px; font-size: 15px; outline: none; resize: vertical; font-family: inherit;"
+      ></textarea>
+    </div>
+
+    <p *ngIf="submitError" style="color: #c45151; font-size: 14px; margin: 0 0 15px;">{{ submitError }}</p>
+    <p *ngIf="submitSuccess" style="color: #078f87; font-size: 14px; margin: 0 0 15px;">Thank you! Your review has been posted.</p>
+
+    <button
+      type="button"
+      (click)="submitReview()"
+      [disabled]="isSubmitting"
+      style="width: 100%; padding: 14px; border: none; border-radius: 25px; background: #078f87; color: white; font-size: 16px; font-weight: 600; cursor: pointer;"
+    >
+      {{ isSubmitting ? 'Submitting...' : 'Submit Review' }}
+    </button>
+
+  </div>
+
+</section>
+
+<div class="back-home">
+  <a routerLink="/" class="btn">Back to Home</a>
+</div>

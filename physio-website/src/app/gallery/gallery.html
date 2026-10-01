@@ -1,0 +1,63 @@
+<nav>
+  <h2>Dr. Khadija Kardekar</h2>
+
+  <div class="links">
+    <a routerLink="/">Home</a>
+    <a routerLink="/about">About</a>
+    <a routerLink="/services">Services</a>
+    <a routerLink="/qualifications">Qualifications</a>
+    <a routerLink="/gallery">Gallery</a>
+    <a routerLink="/reviews">Reviews</a>
+    <a routerLink="/contact">Contact</a>
+  </div>
+</nav>
+
+<section class="gallery-hero">
+
+  <p class="label">OUR GALLERY</p>
+
+  <h1>A Glimpse Into Our Work</h1>
+
+  <p>
+    Explore moments from the clinic, physiotherapy sessions
+    and professional journey of Dr. Khadija Kardekar.
+  </p>
+
+</section>
+
+<section class="gallery-section">
+
+  <div class="gallery-card" *ngFor="let item of galleryItems">
+    <div class="image-box" style="padding: 0; overflow: hidden;">
+      <img
+        [src]="galleryService.getFullImageUrl(item.imageUrl)"
+        [alt]="item.title"
+        style="width: 100%; height: 100%; object-fit: cover; display: block;"
+      >
+    </div>
+    <h3>{{ item.title }}</h3>
+    <p>{{ item.description }}</p>
+  </div>
+
+  <p *ngIf="galleryItems.length === 0" style="grid-column: 1 / -1; text-align: center; color: #666;">
+    Photos will be added here soon.
+  </p>
+
+</section>
+
+<section class="gallery-note">
+
+  <p class="label">COMING SOON</p>
+
+  <h2>More Moments Will Be Added</h2>
+
+  <p>
+    Actual clinic photographs, professional images and
+    other moments will be added to the gallery.
+  </p>
+
+</section>
+
+<div class="back-home">
+  <a routerLink="/" class="btn">Back to Home</a>
+</div>

@@ -1,0 +1,173 @@
+* {
+  box-sizing: border-box;
+}
+
+nav {
+  height: 85px;
+  padding: 0 8%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: white;
+}
+
+nav h2 {
+  color: #078f87;
+  margin: 0;
+}
+
+.links {
+  display: flex;
+  gap: 25px;
+}
+
+.links a {
+  color: #222;
+  text-decoration: none;
+  font-size: 16px;
+}
+
+.links a:hover {
+  color: #078f87;
+}
+
+.services-hero {
+  padding: 80px 15%;
+  background: #e8f6f4;
+  text-align: center;
+}
+
+.label {
+  color: #078f87;
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+
+.services-hero h1 {
+  max-width: 750px;
+  margin: 20px auto;
+  color: #143d3a;
+  font-size: 48px;
+}
+
+.services-hero p:not(.label) {
+  max-width: 650px;
+  margin: auto;
+  line-height: 1.7;
+  color: #444;
+  font-size: 17px;
+}
+
+.services-section {
+  padding: 70px 8%;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 25px;
+}
+
+.service-card {
+  padding: 35px;
+  background: white;
+  border-radius: 15px;
+  border: 1px solid #e1eeee;
+  transition: 0.3s;
+}
+
+.service-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+}
+
+.icon {
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  background: #e8f6f4;
+  color: #078f87;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+}
+
+.service-card h2 {
+  color: #143d3a;
+  font-size: 22px;
+  margin-top: 25px;
+}
+
+.service-card p {
+  color: #555;
+  line-height: 1.6;
+}
+
+.service-note {
+  padding: 70px 15%;
+  background: #f7fbfa;
+  text-align: center;
+}
+
+.service-note h2 {
+  color: #143d3a;
+  font-size: 32px;
+}
+
+.service-note p:not(.label) {
+  max-width: 650px;
+  margin: auto;
+  color: #555;
+  line-height: 1.7;
+}
+
+.back-home {
+  padding: 40px;
+  text-align: center;
+}
+
+.btn {
+  display: inline-block;
+  padding: 14px 25px;
+  border-radius: 30px;
+  background: #078f87;
+  color: white;
+  text-decoration: none;
+}
+
+.btn:hover {
+  background: #056f69;
+}
+
+@media (max-width: 900px) {
+
+  .services-section {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 650px) {
+
+  nav {
+    height: auto;
+    padding: 20px;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .links {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .services-hero {
+    padding: 60px 25px;
+  }
+
+  .services-hero h1 {
+    font-size: 38px;
+  }
+
+  .services-section {
+    grid-template-columns: 1fr;
+    padding: 50px 25px;
+  }
+}

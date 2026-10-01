@@ -1,0 +1,372 @@
+<div class="admin-layout">
+
+  <!-- =========================
+       SIDEBAR
+  ========================== -->
+
+  <aside class="sidebar">
+
+    <div class="logo">
+      PhysioCare
+    </div>
+
+    <p class="admin-label">
+      ADMIN PANEL
+    </p>
+
+    <nav>
+
+      <!-- DASHBOARD -->
+      <a
+        routerLink="/admin"
+        routerLinkActive="active"
+        [routerLinkActiveOptions]="{ exact: true }">
+        Dashboard
+      </a>
+
+      <!-- ABOUT -->
+      <a
+        routerLink="/admin/about"
+        routerLinkActive="active">
+        About
+      </a>
+
+      <!-- SERVICES -->
+      <a
+        routerLink="/admin/services"
+        routerLinkActive="active">
+        Services
+      </a>
+
+      <!-- QUALIFICATIONS -->
+      <a
+        routerLink="/admin/qualifications"
+        routerLinkActive="active">
+        Qualifications
+      </a>
+
+      <!-- GALLERY -->
+      <a
+        routerLink="/admin/gallery"
+        routerLinkActive="active">
+        Gallery
+      </a>
+
+      <!-- REVIEWS -->
+      <a
+        routerLink="/admin/reviews"
+        routerLinkActive="active">
+        Reviews
+      </a>
+
+      <!-- CONTACT -->
+      <a
+        routerLink="/admin/contact"
+        routerLinkActive="active">
+        Contact
+      </a>
+
+    </nav>
+
+    <button
+      class="logout"
+      type="button"
+      (click)="logout()">
+      Logout
+    </button>
+
+  </aside>
+
+
+  <!-- =========================
+       MAIN DASHBOARD
+  ========================== -->
+
+  <main class="dashboard">
+
+    <!-- TOP BAR -->
+
+    <header class="topbar">
+
+      <div>
+
+        <p class="small-title">
+          ADMIN DASHBOARD
+        </p>
+
+        <h1>
+          Welcome, Doctor
+        </h1>
+
+      </div>
+
+      <a
+        routerLink="/"
+        class="website-btn">
+        View Website
+      </a>
+
+    </header>
+
+
+    <!-- =========================
+         WELCOME SECTION
+    ========================== -->
+
+    <section class="welcome">
+
+      <p class="label">
+        PHYSIOCARE MANAGEMENT
+      </p>
+
+      <h2>
+        Manage Your Website
+      </h2>
+
+      <p>
+        Update your website information, services,
+        qualifications, gallery, reviews and contact
+        details from one place.
+      </p>
+
+    </section>
+
+
+    <!-- =========================
+         MANAGEMENT CARDS
+    ========================== -->
+
+    <section class="management-grid">
+
+
+      <!-- =========================
+           ABOUT
+      ========================== -->
+
+      <div class="management-card">
+
+        <div class="icon">
+          👩‍⚕️
+        </div>
+
+        <h3>
+          About
+        </h3>
+
+        <p>
+          Manage doctor information and professional profile.
+        </p>
+
+        <a
+          routerLink="/admin/about"
+          class="manage-btn">
+          Manage
+        </a>
+
+      </div>
+
+
+      <!-- =========================
+           SERVICES
+      ========================== -->
+
+      <div class="management-card">
+
+        <div class="icon">
+          🩺
+        </div>
+
+        <h3>
+          Services
+        </h3>
+
+        <p>
+          Add, edit or remove physiotherapy services.
+        </p>
+
+        <a
+          routerLink="/admin/services"
+          class="manage-btn">
+          Manage
+        </a>
+
+      </div>
+
+
+      <!-- =========================
+           QUALIFICATIONS
+      ========================== -->
+
+      <div class="management-card">
+
+        <div class="icon">
+          🎓
+        </div>
+
+        <h3>
+          Qualifications
+        </h3>
+
+        <p>
+          Update qualifications, certifications and experience.
+        </p>
+
+        <a
+          routerLink="/admin/qualifications"
+          class="manage-btn">
+          Manage
+        </a>
+
+      </div>
+
+
+      <!-- =========================
+           GALLERY
+      ========================== -->
+
+      <div class="management-card">
+
+        <div class="icon">
+          🖼️
+        </div>
+
+        <h3>
+          Gallery
+        </h3>
+
+        <p>
+          Add or remove clinic and professional photographs.
+        </p>
+
+        <a
+          routerLink="/admin/gallery"
+          class="manage-btn">
+          Manage
+        </a>
+
+      </div>
+
+
+      <!-- =========================
+           REVIEWS
+      ========================== -->
+
+      <div class="management-card">
+
+        <div class="icon">
+          ⭐
+        </div>
+
+        <h3>
+          Reviews
+        </h3>
+
+        <p>
+          Manage patient reviews and testimonials.
+        </p>
+
+        <a
+          routerLink="/admin/reviews"
+          class="manage-btn">
+          Manage
+        </a>
+
+      </div>
+
+
+      <!-- =========================
+           CONTACT
+      ========================== -->
+
+      <div class="management-card">
+
+        <div class="icon">
+          📞
+        </div>
+
+        <h3>
+          Contact
+        </h3>
+
+        <p>
+          Update phone number, email and clinic location.
+        </p>
+
+        <a
+          routerLink="/admin/contact"
+          class="manage-btn">
+          Manage
+        </a>
+
+      </div>
+
+    </section>
+
+
+    <!-- =========================
+         QUICK INFO
+    ========================== -->
+
+    <section class="quick-info">
+
+      <div class="info-box">
+
+        <span class="info-icon">
+          📝
+        </span>
+
+        <div>
+          <strong>
+            Website Content
+          </strong>
+
+          <p>
+            Keep your professional information up to date.
+          </p>
+        </div>
+
+      </div>
+
+
+      <div class="info-box">
+
+        <span class="info-icon">
+          💻
+        </span>
+
+        <div>
+          <strong>
+            Live Website
+          </strong>
+
+          <p>
+            Changes will eventually be reflected on the public website.
+          </p>
+        </div>
+
+      </div>
+
+
+      <div class="info-box">
+
+        <span class="info-icon">
+          🔒
+        </span>
+
+        <div>
+          <strong>
+            Admin Access
+          </strong>
+
+          <p>
+            This dashboard is intended for authorized users.
+          </p>
+        </div>
+
+      </div>
+
+    </section>
+
+  </main>
+
+</div>
