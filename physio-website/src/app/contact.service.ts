@@ -13,7 +13,7 @@ export interface ContactInfo {
 })
 export class ContactService {
 
-  private apiUrl = 'http://localhost:5000/api/contact';
+  private apiUrl = 'http://https://physio-website-7t48.onrender.com/api/contact';
 
   constructor(private http: HttpClient) {}
 

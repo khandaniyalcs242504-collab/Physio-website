@@ -13,7 +13,7 @@ export interface Service {
 })
 export class ServicesService {
 
-  private apiUrl = 'http://localhost:5000/api/services';
+  private apiUrl = 'http://https://physio-website-7t48.onrender.com/api/services';
 
   constructor(private http: HttpClient) {}
 

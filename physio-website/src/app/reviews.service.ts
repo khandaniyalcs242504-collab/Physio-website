@@ -15,7 +15,7 @@ export interface Review {
 })
 export class ReviewsService {
 
-  private apiUrl = 'http://localhost:5000/api/reviews';
+  private apiUrl = 'http://https://physio-website-7t48.onrender.com/api/reviews';
 
   constructor(private http: HttpClient) {}
 

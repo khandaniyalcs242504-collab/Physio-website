@@ -14,7 +14,7 @@ export interface Achievement {
 })
 export class AchievementsService {
 
-  private apiUrl = 'http://localhost:5000/api/achievements';
+  private apiUrl = 'http://https://physio-website-7t48.onrender.com/api/achievements';
 
   constructor(private http: HttpClient) {}
 

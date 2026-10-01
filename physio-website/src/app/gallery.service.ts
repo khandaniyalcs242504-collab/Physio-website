@@ -16,8 +16,8 @@ export interface GalleryItem {
 })
 export class GalleryService {
 
-  private apiUrl = 'http://localhost:5000/api/gallery';
-  private baseUrl = 'http://localhost:5000';
+  private apiUrl = 'http://https://physio-website-7t48.onrender.com/api/gallery';
+  private baseUrl = 'http://https://physio-website-7t48.onrender.com';
 
   constructor(private http: HttpClient) {}
 

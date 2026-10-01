@@ -14,8 +14,8 @@ export interface AboutInfo {
 })
 export class AboutService {
 
-  private apiUrl = 'http://localhost:5000/api/about';
-  private baseUrl = 'http://localhost:5000';
+  private apiUrl = 'http://https://physio-website-7t48.onrender.com/api/about';
+  private baseUrl = 'http://https://physio-website-7t48.onrender.com';
 
   constructor(private http: HttpClient) {}
 
