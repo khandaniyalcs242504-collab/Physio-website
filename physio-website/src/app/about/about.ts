@@ -13,16 +13,18 @@ import { Logo } from '../logo/logo';
 export class About implements OnInit {
 
   doctorName = 'Dr. Khadija Kardekar';
+
   tagline = 'Helping You Move Better';
+
   aboutText =
-    'Dr. Khadija Kardekar completed her Bachelor of Physiotherapy (BPT) ' +
-    'and began her career working at a hospital for a year, ' +
-    'gaining hands-on clinical experience across a range of patient conditions. ' +
-    'She went on to open her own physiotherapy clinic in Marol, ' +
-    'which has since closed. ' +
-    'With 4+ years of professional experience, ' +
-    'she remains dedicated to helping patients improve their movement, ' +
-    'recovery and overall physical well-being ' +
+    'Dr. Khadija Kardekar is a qualified physiotherapist with 4+ years of professional experience. ' +
+    'She completed her Bachelor of Physiotherapy (BPT) from Maharashtra University of Health Sciences, Nashik, ' +
+    'and began her career in Mumbai. ' +
+    'She has successfully treated 1000+ patients with Musculoskeletal and Neurological conditions ' +
+    'and has worked with hospitals including Burhani Hospital, Prime Hospital and Rehmania Hospital. ' +
+    'She has also served as a Senior Consultant Physiotherapist at MESCO Physiotherapy Centre ' +
+    'and is a certified Dry Needling Practitioner and Therapeutic Taping Specialist. ' +
+    'She remains dedicated to helping patients improve their physical movement, recovery and overall well-being ' +
     'through personalized, patient-focused care.';
 
   about: AboutInfo = {
