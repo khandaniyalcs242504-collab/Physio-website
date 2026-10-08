@@ -22,6 +22,14 @@ export class Home implements OnInit {
   ) {}
 
   ngOnInit() {
+
+    const cachedAbout = this.aboutService.getCachedAbout();
+
+    if (cachedAbout) {
+      this.about = cachedAbout;
+      this.cdr.detectChanges();
+    }
+
     this.aboutService.getAbout().subscribe({
       next: (data) => {
         this.about = data;

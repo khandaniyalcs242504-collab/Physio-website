@@ -47,21 +47,29 @@
       recovery and well-being.
     </p>
 
-
     <div class="buttons">
 
-      <a href="/about" routerLink="/about" class="btn">About Dr. Khadija</a>
+      <a href="/about" routerLink="/about" class="btn">
+        About Dr. Khadija
+      </a>
 
-      <a href="/services" routerLink="/services" class="btn">View Services</a>
+      <a href="/services" routerLink="/services" class="btn">
+        View Services
+      </a>
 
     </div>
 
   </div>
 
 
-  <div class="doctor-photo" [style.padding]="about.photoUrl ? '0' : null" [style.overflow]="about.photoUrl ? 'hidden' : null">
-    <img *ngIf="about.photoUrl" [src]="aboutService.getFullImageUrl(about.photoUrl)" alt="Dr. Khadija Kardekar" style="width: 100%; height: 100%; object-fit: cover; border-radius: inherit;">
-    <span *ngIf="!about.photoUrl">Doctor Photo</span>
+  <div class="doctor-photo">
+
+    <img
+      *ngIf="about.photoUrl"
+      [src]="aboutService.getFullImageUrl(about.photoUrl)"
+      alt="Dr. Khadija Kardekar"
+    >
+
   </div>
 
 </section>
