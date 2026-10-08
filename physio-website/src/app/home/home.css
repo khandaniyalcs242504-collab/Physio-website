@@ -2,8 +2,16 @@
   box-sizing: border-box;
 }
 
+html,
 body {
   margin: 0;
+  padding: 0;
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+body {
   font-family: Arial, sans-serif;
 }
 
@@ -39,6 +47,8 @@ nav h2 {
 
   position: relative;
   z-index: 1001;
+
+  max-width: 100%;
 }
 
 .links a {
@@ -107,6 +117,9 @@ nav h2 {
   position: relative;
   z-index: 1;
 
+  width: 100%;
+  max-width: 100%;
+
   min-height: 520px;
 
   padding: 70px 8%;
@@ -118,6 +131,8 @@ nav h2 {
   align-items: center;
 
   gap: 50px;
+
+  overflow: hidden;
 }
 
 .hero-text {
@@ -125,6 +140,8 @@ nav h2 {
   z-index: 2;
 
   max-width: 550px;
+
+  min-width: 0;
 }
 
 .tagline {
@@ -209,6 +226,8 @@ nav h2 {
   width: 265px;
   height: 420px;
 
+  flex-shrink: 0;
+
   border-radius: 130px 130px 20px 20px;
 
   background: #c5e5e1;
@@ -218,6 +237,19 @@ nav h2 {
   align-items: center;
 
   color: #078f87;
+
+  overflow: hidden;
+}
+
+.doctor-photo img {
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+
+  border-radius: inherit;
+
+  display: block;
 }
 
 
@@ -228,6 +260,9 @@ nav h2 {
 .welcome {
   position: relative;
   z-index: 1;
+
+  width: 100%;
+  max-width: 100%;
 
   padding: 70px 8%;
 

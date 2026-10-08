@@ -53,7 +53,9 @@ export class AboutService {
   }
 
   getFullImageUrl(imageUrl: string | undefined): string {
-    if (!imageUrl) return '';
+    if (!imageUrl) {
+      return '';
+    }
 
     return `${this.baseUrl}${imageUrl}`;
   }
