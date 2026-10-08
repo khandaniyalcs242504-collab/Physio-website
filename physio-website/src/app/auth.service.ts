@@ -16,36 +16,77 @@ export interface SetupCheckResponse {
 })
 export class AuthService {
 
+  // LOCAL BACKEND
   private apiUrl = 'https://physio-website-7r48.onrender.com/api/auth';
+
   private tokenKey = 'physiocare_admin_token';
 
   constructor(private http: HttpClient) {}
 
   checkSetup(): Observable<SetupCheckResponse> {
-    return this.http.get<SetupCheckResponse>(`${this.apiUrl}/check-setup`);
+    return this.http.get<SetupCheckResponse>(
+      `${this.apiUrl}/check-setup`
+    );
   }
 
-  setupAdmin(username: string, password: string): Observable<any> {
-    return this.http.post(`${this.apiUrl}/setup`, { username, password });
+  setupAdmin(
+    username: string,
+    password: string
+  ): Observable<any> {
+
+    return this.http.post(
+      `${this.apiUrl}/setup`,
+      {
+        username,
+        password
+      }
+    );
   }
 
-  login(username: string, password: string): Observable<LoginResponse> {
-    return this.http.post<LoginResponse>(`${this.apiUrl}/login`, { username, password }).pipe(
+  login(
+    username: string,
+    password: string
+  ): Observable<LoginResponse> {
+
+    return this.http.post<LoginResponse>(
+      `${this.apiUrl}/login`,
+      {
+        username,
+        password
+      }
+    ).pipe(
+
       tap((response) => {
-        localStorage.setItem(this.tokenKey, response.token);
+
+        localStorage.setItem(
+          this.tokenKey,
+          response.token
+        );
+
       })
+
     );
   }
 
   logout(): void {
-    localStorage.removeItem(this.tokenKey);
+
+    localStorage.removeItem(
+      this.tokenKey
+    );
+
   }
 
   getToken(): string | null {
-    return localStorage.getItem(this.tokenKey);
+
+    return localStorage.getItem(
+      this.tokenKey
+    );
+
   }
 
   isLoggedIn(): boolean {
+
     return !!this.getToken();
+
   }
 }

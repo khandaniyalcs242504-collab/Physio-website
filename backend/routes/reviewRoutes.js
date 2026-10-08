@@ -12,7 +12,7 @@ const {
 
 router.get('/', getReviews);
 router.get('/:id', getReviewById);
-router.post('/', protect, createReview);
+router.post('/', createReview);
 router.put('/:id', protect, updateReview);
 router.delete('/:id', protect, deleteReview);
 

@@ -18,6 +18,7 @@ export interface QualificationCard {
 })
 export class QualificationsService {
 
+  // LOCAL BACKEND
   private apiUrl = 'https://physio-website-7r48.onrender.com/api/qualification-cards';
 
   constructor(private http: HttpClient) {}
@@ -27,18 +28,35 @@ export class QualificationsService {
   }
 
   getQualificationById(id: string): Observable<QualificationCard> {
-    return this.http.get<QualificationCard>(`${this.apiUrl}/${id}`);
+    return this.http.get<QualificationCard>(
+      `${this.apiUrl}/${id}`
+    );
   }
 
-  createQualification(item: QualificationCard): Observable<QualificationCard> {
-    return this.http.post<QualificationCard>(this.apiUrl, item);
+  createQualification(
+    item: QualificationCard
+  ): Observable<QualificationCard> {
+
+    return this.http.post<QualificationCard>(
+      this.apiUrl,
+      item
+    );
   }
 
-  updateQualification(id: string, item: QualificationCard): Observable<QualificationCard> {
-    return this.http.put<QualificationCard>(`${this.apiUrl}/${id}`, item);
+  updateQualification(
+    id: string,
+    item: QualificationCard
+  ): Observable<QualificationCard> {
+
+    return this.http.put<QualificationCard>(
+      `${this.apiUrl}/${id}`,
+      item
+    );
   }
 
   deleteQualification(id: string): Observable<any> {
-    return this.http.delete(`${this.apiUrl}/${id}`);
+    return this.http.delete(
+      `${this.apiUrl}/${id}`
+    );
   }
 }
