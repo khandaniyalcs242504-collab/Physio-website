@@ -1,10 +1,10 @@
-<nav>
 
+<nav>
   <app-logo></app-logo>
 
   <div class="links">
-
-    <a href="/" routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">Home</a>
+    <a href="/" routerLink="/" routerLinkActive="active"
+       [routerLinkActiveOptions]="{ exact: true }">Home</a>
 
     <a href="/about" routerLink="/about" routerLinkActive="active">About</a>
 
@@ -17,18 +17,11 @@
     <a href="/reviews" routerLink="/reviews" routerLinkActive="active">Reviews</a>
 
     <a href="/contact" routerLink="/contact" routerLinkActive="active">Contact</a>
-
-    <a routerLink="/admin-login" class="admin-link" title="Admin Login">🔐 Admin</a>
-
   </div>
-
 </nav>
 
-
 <section class="hero">
-
   <div class="hero-text">
-
     <p class="tagline">
       Complete PhysioCare
     </p>
@@ -47,9 +40,7 @@
       recovery and well-being.
     </p>
 
-
     <div class="buttons">
-
       <a href="/about" routerLink="/about" class="btn">
         About Dr. Khadija
       </a>
@@ -57,27 +48,19 @@
       <a href="/services" routerLink="/services" class="btn">
         View Services
       </a>
-
     </div>
-
   </div>
 
-
   <div class="doctor-photo">
-
     <img
       *ngIf="about.photoUrl"
       [src]="aboutService.getFullImageUrl(about.photoUrl)"
       alt="Dr. Khadija Kardekar"
     >
-
   </div>
-
 </section>
 
-
 <section class="welcome">
-
   <p class="section-label">
     WELCOME
   </p>
@@ -91,34 +74,23 @@
     of professional experience.
   </p>
 
-
   <div class="stats">
-
     <div class="stat">
-
-      <h3>
-        4+
-      </h3>
-
-      <p>
-        Years Experience
-      </p>
-
+      <h3>4+</h3>
+      <p>Years Experience</p>
     </div>
 
-
     <div class="stat">
-
-      <h3>
-        1000+
-      </h3>
-
-      <p>
-        Patients Treated
-      </p>
-
+      <h3>1000+</h3>
+      <p>Patients Treated</p>
     </div>
-
   </div>
-
 </section>
+
+<footer class="site-footer">
+  <p>© 2026 Complete PhysioCare</p>
+
+  <a routerLink="/admin-login" class="admin-footer-link">
+    Admin Login
+  </a>
+</footer>
